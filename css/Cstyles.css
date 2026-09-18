@@ -1,7 +1,20 @@
 /* most of the comments of the Hstyles.css also apply here */
+:root {
+    --color-background: #ffffff;
+    --color-text: #333333;
+    --color-accent: #DE638A;
+
+    --space-1: 5px;
+    --space-2: 10px;
+    --space-3: 15px;
+    --space-4: 20px;
+    --space-5: 25px;
+    --space-6: 35px;
+    --space-7: 45px;
+}
 
 body {
-    background-color: #ffffff;
+    background-color: var(--color-background);
     font-family: Georgia, Arial;
     text-align: center;
     margin: 0;
@@ -22,11 +35,11 @@ header {
 }
 
 h1 {
-    color: #333333;
+    color: var(--color-text);
     font-size: 26px;
     font-weight: 700;
     line-height: 1.2;
-    margin: 0 0 15px 0;
+    margin: 0 0 var(--space-3) 0;
     padding: 0;
 
 }
@@ -36,16 +49,16 @@ nav {
     font-size: 15px;
     font-weight: 600;
     line-height: 1.4;
-    margin-bottom: 25px;
+    margin-bottom: var(--space-5);
+    gap: var(--space-3);
     padding: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 15px;
 }
 
 nav a {
-    color: #333333;
+    color: var(--color-text);
     /*i tried putting the color in the nav without specifiying the element a it turned out that a has its 
     own browser default color so i had to do it like this to be able to override it*/
     text-decoration: none;
@@ -62,21 +75,21 @@ main {
 }
 
 h2 {
-    color: #DE638A;
+    color: var(--color-accent);
     font-size: 22px;
     font-weight: 700;
     line-height: 1.3;
-    margin: 35px 0 8px 0;
+    margin: var(--space-6) 0 8px 0;
     padding: 0;
     text-align: center;
 }
 
 form {
-    color: #333333;
+    color: var(--color-text);
     font-size: 15px;
     font-weight: 400;
     line-height: 1.6;
-    padding: 20px 20px 0 20px;
+    padding: var(--space-4) var(--space-4) 0 var(--space-4);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -96,7 +109,7 @@ form input,
 form textarea {
     width: 100%;
     max-width: 400px;
-    box-lines: border-box;
+    box-sizing: border-box;
 }
 
 form textarea {
@@ -113,12 +126,12 @@ footer {
 }
 
 footer p {
-    color: #333333;
+    color: var(--color-text);
     font-size: 10px;
     font-weight: 400;
     line-height: 1.4;
-    margin-top: 45px;
-    padding: 15px 0;
+    margin-top: var(--space-7);
+    padding: var(--space-3) 0;
 }
 
 @media (min-width: 768px) {
@@ -135,12 +148,13 @@ footer p {
     }
 
     nav {
-        margin-bottom: 35px;
-        gap: 20px;
+        margin-bottom: var(--space-6);
+        gap: var(--space-4);
     }
 
     form {
-        padding: 20px 20px 0 20px;
+        padding: var(--space-4) var(--space-4) 0 var(--space-4);
+        font-size: 16px;
     }
 
     footer p {
