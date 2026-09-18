@@ -10,12 +10,18 @@ body {
     /* visible area on my browser */
     box-sizing: border-box;
     /* the width of box doesn't only include the content but also the padding */
-    display: flex;
-    /* to organize the tags and put the footer at the bottom of the page */
-    flex-direction: column;
-    /*organize them in a vertical way */
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+    grid-template-rows: auto auto 1fr auto;
 }
 
+header{
+     grid-area: header;
+}
 
 h1 {
     color: #333333;
@@ -28,6 +34,7 @@ h1 {
 }
 
 nav {
+    grid-area: nav;
     font-size: 15px;
     font-weight: 600;
     line-height: 1.4;
@@ -49,8 +56,10 @@ nav a {
 }
 
 main {
-    flex: 1; /*row is set to true to fill extra space, shrink is set to true so when i shrink the page, and width by default the screen 
-    opens this way*/
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h2 {
@@ -71,6 +80,10 @@ main p {
     margin: 0;
     padding: 20px 20px 0 20px;
     /* I added space so the text is not too close to the edges */
+}
+
+footer{
+    grid-area: footer;
 }
 
 footer p {

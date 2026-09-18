@@ -8,10 +8,18 @@ body {
     padding: 30px 50px;
     min-height: 100vh;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+    grid-template-rows: auto auto 1fr auto;
 }
 
+header {
+    grid-area: header;
+}
 
 h1 {
     color: #333333;
@@ -24,6 +32,7 @@ h1 {
 }
 
 nav {
+    grid-area: nav;
     font-size: 15px;
     font-weight: 600;
     line-height: 1.4;
@@ -41,7 +50,10 @@ nav a {
 }
 
 main {
-    flex: 1;
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h2 {
@@ -60,23 +72,26 @@ form {
     font-weight: 400;
     line-height: 1.6;
     padding: 20px 20px 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 form label { /* applies for all label elements in the form tag */
-    display: block; /* makes the element behave like a block and take its own line. */
     margin-bottom: 6px;
 }
 
 .form-label { /*applies only on the label elements in the form tag defined within the class form-label */
-    display: block; /*i could have removed this and the following command because they are the same as the ones in the form label, however
-    if numbers were different the class would override the elemet styling due to higher priority */
     margin-bottom: 6px;
     margin-top: 18px;
 }
 
 form button {
-    display: block;
     margin: 18px auto 0 auto; /* I used auto on the sides to center the button */
+}
+
+footer {
+    grid-area: footer;
 }
 
 footer p {

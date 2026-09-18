@@ -10,8 +10,17 @@ body {
     min-height: 100vh;
     /*I used this and the following 4 commands to be able to have the footer on the bottom of the page*/
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+    grid-template-rows: auto auto 1fr auto;
+}
+
+header {
+    grid-area: header;
 }
 
 h1 {
@@ -24,6 +33,7 @@ h1 {
 }
 
 nav {
+    grid-area: nav;
     font-size: 15px;
     font-weight: 600;
     line-height: 1.4;
@@ -40,7 +50,17 @@ nav a {
 }
 
 main {
-    flex: 1;
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.about-photo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .about-photo h2 {
@@ -60,6 +80,12 @@ main {
     padding: 20px 20px 0 20px;
 }
 
+.about-information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 h2 {
     color: #DE638A;
     font-size: 26px;
@@ -77,6 +103,10 @@ main p {
     line-height: 1.6; /*height of the words */
     margin: 0;
     padding: 20px 20px 0 20px;
+}
+
+footer{
+    grid-area: footer;
 }
 
 footer p {
