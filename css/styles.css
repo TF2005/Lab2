@@ -6,7 +6,7 @@ body {
     /*it uses georgia if not found it uses arial*/
     text-align: center;
     margin: 0;
-    padding: 30px 50px;
+    padding: 20px;
     min-height: 100vh;
     /*I used this and the following 4 commands to be able to have the footer on the bottom of the page*/
     box-sizing: border-box;
@@ -25,7 +25,7 @@ header {
 
 h1 {
     color: #333333;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 700;
     line-height: 1.2;
     margin: 0 0 15px 0;
@@ -37,11 +37,12 @@ nav {
     font-size: 15px;
     font-weight: 600;
     line-height: 1.4;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     padding: 0;
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 nav a {
@@ -51,6 +52,9 @@ nav a {
 
 main {
     grid-area: main;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,7 +69,7 @@ main {
 
 .about-photo h2 {
     color: #DE638A;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 700;
     line-height: 1.3;
     margin: 35px 0 8px 0;
@@ -74,10 +78,11 @@ main {
 }
 
 .about-photo img {
-    width: 215px;
-    height: 312px;
+    width: 60%;
+    max-width: 215px;
+    height: auto;
     margin: 0 0 0 0;
-    padding: 20px 20px 0 20px;
+    padding: 15px 0 0 0;
 }
 
 .about-information {
@@ -88,21 +93,22 @@ main {
 
 h2 {
     color: #DE638A;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 700;
     line-height: 1.3;
     margin: 35px 0 8px 0;
     padding: 0;
+    text-align: center;
 
 }
 
 main p {
     color: #333333;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 400; /*for degree of bold */
     line-height: 1.6; /*height of the words */
     margin: 0;
-    padding: 20px 20px 0 20px;
+    padding: 15px 5px 0 5px;
 }
 
 footer{
@@ -110,12 +116,45 @@ footer{
 }
 
 footer p {
-    box-sizing: content-box;
     color: #333333;
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 400;
     line-height: 1.4;
-    margin-top: 43px;
-    margin-left: 15px;
+    margin-top: 45px;
+    margin-left: 0px;
     padding: 15px 0;
+
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 30px 50px;
+    }
+    h1{
+        font-size: 32px;
+    }
+    h2 {
+        font-size: 26px;
+    }
+    .about-photo h2 {
+        color: #DE638A;
+        font-size: 26px;
+    }
+    nav {
+        margin-bottom: 35px;
+        gap: 20px;
+    }
+    .about-photo img {
+        width: 215px;
+        height: 312px;
+        padding: 20px 20px 0 20px;
+    }
+    main p {
+        padding: 20px 20px 0 20px;
+    }
+    footer p{
+        font-size:13px;
+        margin-top: 43px;
+        margin-left: 15px;
+    }
 }

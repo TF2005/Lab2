@@ -5,7 +5,7 @@ body {
     font-family: Georgia, Arial;
     text-align: center;
     margin: 0;
-    padding: 30px 50px;
+    padding: 20px;
     min-height: 100vh;
     box-sizing: border-box;
     display: grid;
@@ -23,7 +23,7 @@ header {
 
 h1 {
     color: #333333;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 700;
     line-height: 1.2;
     margin: 0 0 15px 0;
@@ -36,21 +36,26 @@ nav {
     font-size: 15px;
     font-weight: 600;
     line-height: 1.4;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     padding: 0;
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 nav a {
-    color: #333333; /*i tried putting the color in the nav without specifiying the element a it turned out that a has its 
+    color: #333333;
+    /*i tried putting the color in the nav without specifiying the element a it turned out that a has its 
     own browser default color so i had to do it like this to be able to override it*/
     text-decoration: none;
 }
 
 main {
     grid-area: main;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,7 +63,7 @@ main {
 
 h2 {
     color: #DE638A;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 700;
     line-height: 1.3;
     margin: 35px 0 8px 0;
@@ -68,7 +73,7 @@ h2 {
 
 form {
     color: #333333;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 400;
     line-height: 1.6;
     padding: 20px 20px 0 20px;
@@ -77,17 +82,30 @@ form {
     align-items: center;
 }
 
-form label { /* applies for all label elements in the form tag */
-    margin-bottom: 6px;
+form label {
+    /* applies for all label elements in the form tag */
+    margin-bottom: 8px;
 }
 
-.form-label { /*applies only on the label elements in the form tag defined within the class form-label */
-    margin-bottom: 6px;
+.form-label {
+    /*applies only on the label elements in the form tag defined within the class form-label */
     margin-top: 18px;
 }
 
+form input,
+form textarea {
+    width: 100%;
+    max-width: 400px;
+    box-lines: border-box;
+}
+
+form textarea {
+    min-height: 60px;
+}
+
 form button {
-    margin: 18px auto 0 auto; /* I used auto on the sides to center the button */
+    margin: 18px auto 0 auto;
+    /* I used auto on the sides to center the button */
 }
 
 footer {
@@ -96,9 +114,36 @@ footer {
 
 footer p {
     color: #333333;
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 400;
     line-height: 1.4;
     margin-top: 45px;
     padding: 15px 0;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    body {
+        padding: 30px 50px;
+    }
+
+    nav {
+        margin-bottom: 35px;
+        gap: 20px;
+    }
+
+    form {
+        padding: 20px 20px 0 20px;
+    }
+
+    footer p {
+        font-size: 13px;
+    }
 }
