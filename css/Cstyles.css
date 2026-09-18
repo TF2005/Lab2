@@ -62,6 +62,11 @@ nav a {
     /*i tried putting the color in the nav without specifiying the element a it turned out that a has its 
     own browser default color so i had to do it like this to be able to override it*/
     text-decoration: none;
+    transition: color 200ms;
+}
+
+nav a:hover {
+    color: var(--color-accent);
 }
 
 main {
@@ -119,6 +124,11 @@ form textarea {
 form button {
     margin: 18px auto 0 auto;
     /* I used auto on the sides to center the button */
+    transition: background-color 200ms;
+}
+
+form button:hover {
+    background-color: var(--color-hover);
 }
 
 footer {
