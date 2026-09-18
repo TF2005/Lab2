@@ -103,6 +103,7 @@ form {
 form label {
     /* applies for all label elements in the form tag */
     margin-bottom: 8px;
+    
 }
 
 .form-label {
@@ -115,20 +116,27 @@ form textarea {
     width: 100%;
     max-width: 400px;
     box-sizing: border-box;
+    border: 1px solid var(--color-text);
 }
 
 form textarea {
-    min-height: 60px;
+    min-height: 80px;
+    margin-bottom: 8px;
 }
 
 form button {
     margin: 18px auto 0 auto;
     /* I used auto on the sides to center the button */
-    transition: background-color 200ms;
+    width: 30%;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-text);
+    transition: background-color 200ms, color 200ms, border 200ms;
 }
 
-form button:hover {
-    background-color: var(--color-hover);
+form button:hover{
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-background);
 }
 
 footer {
