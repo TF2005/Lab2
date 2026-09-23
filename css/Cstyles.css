@@ -1,35 +1,6 @@
-:root {
-    --color-background: #ffffff;
-    --color-text: #333333;
-    --color-accent: #DE638A;
-    --color-box: #ffdbe9;
-
-    --space-1: 5px;
-    --space-2: 10px;
-    --space-3: 15px;
-    --space-4: 20px;
-    --space-5: 25px;
-    --space-6: 35px;
-    --space-7: 45px;
-}
-
-body {
-    background-color: var(--color-box);
-    font-family: Georgia, Arial;
-    text-align: center;
-    margin: 0;
-    padding: var(--space-4);
-    min-height: 100vh; /* the page will fill at least the height of the screen */
-    box-sizing: border-box;
-}
-
 .page{
-    background-color: var(--color-background);
-    min-height: 90vh;
-    box-sizing: border-box;
-    border-radius: var(--space-4);
-    padding: var(--space-4);
     display: grid;
+    /*to organize the layout of the whole page */
     grid-template-areas:
         "header"
         "nav"
@@ -38,79 +9,30 @@ body {
     grid-template-rows: auto auto 1fr auto;
 }
 
-header {
-    grid-area: header;
-}
-
-h1 {
-    color: var(--color-text);
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0 0 var(--space-3) 0;
-
-}
-
-nav {
-    grid-area: nav;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.4;
-    margin-bottom: var(--space-5);
-    gap: var(--space-3);
-    display: flex; 
-    justify-content: center;
-}
-
-nav a {
-    color: var(--color-text);
-    /*i tried putting the color in the nav without specifiying the element a it turned out that a has its 
-    own browser default color so i had to do it like this to be able to override it*/
-    text-decoration: none;
-    transition: color 200ms;
-}
-
-nav a:hover {
-    color: var(--color-accent);
-}
-
 main {
     background-color: var(--color-box);
-    border-radius:var(--space-4);
-    grid-area: main;
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
+    border-radius: var(--space-4);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-h2 {
-    color: var(--color-accent);
-    font-size: 19px;
-    font-weight: 700;
-    line-height: 1.3;
-    margin: var(--space-6) 0 8px 0;
-    padding: 0;
-    text-align: center;
-}
 
 form {
     color: var(--color-text);
     font-size: 15px;
-    font-weight: 400;
     line-height: 1.6;
     padding: var(--space-2) var(--space-4) 0 var(--space-4);
     display: flex;
-    flex-direction: column;  /*the form elements will be each one under another */
+    flex-direction: column;
+    /*the form elements will be each one under another */
     align-items: center;
 }
 
 form label {
     /* applies for all label elements in the form tag */
     margin-bottom: 8px;
-    
+
 }
 
 .form-label {
@@ -124,8 +46,8 @@ form textarea {
     max-width: 400px;
     box-sizing: border-box;
     border: 1px solid var(--color-text);
-    border-radius:var(--space-1);
-    padding: 3px
+    border-radius: var(--space-2);
+    padding: 3px;
 }
 
 form textarea {
@@ -136,64 +58,50 @@ form textarea {
 form button {
     margin: var(--space-2) auto 0 auto;
     /* I used auto on the sides to center the button */
-    width: 30%;
+    width: 40%;
     background-color: var(--color-background);
-    border: 1px solid var(--color-text);
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
     transition: background-color 200ms, color 200ms, border 200ms;
-    border-radius:var(--space-1);
+    border-radius: var(--space-2);
+    font-size: 15px;
+    font-weight: 700;
+    font-family: Georgia, Arial;
+    cursor: pointer;
+    /*i learned that it looks better for a clickable button */
+    padding: var(--space-1) var(--space-1);
 }
 
-form button:hover{
+form button:hover {
     background-color: var(--color-accent);
     border-color: var(--color-accent);
     color: var(--color-background);
 }
 
-footer {
-    grid-area: footer;
-}
-
-footer p {
-    color: var(--color-text);
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 1.4;
-    margin-top: var(--space-7);
-    margin-bottom: 0;
-    padding: var(--space-3) 0;
-}
 
 @media (min-width: 768px) {
-    h1 {
-        font-size: 32px;
-    }
-
-    h2 {
-        font-size: 26px;
-    }
-
-    body {
-        padding: 30px 50px;
-    }
-
-    nav {
-        margin-bottom: var(--space-6);
-        gap: var(--space-4);
-    }
 
     form {
         padding: var(--space-4) var(--space-4) 0 var(--space-4);
         font-size: 16px;
         width: 50%;
     }
-    form input,form textarea {
+
+    form input,
+    form textarea {
         width: 100%;
         max-width: 250px;
+        padding: var(--space-1) var(--space-1);
     }
+
+    form textarea {
+        min-height: 60px;
+    }
+
     form button {
         width: 15%;
-    }
-    footer p {
-    font-size: 13px;
+        font-size: 16px;
+        margin: 0 auto;
+
     }
 }

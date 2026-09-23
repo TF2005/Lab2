@@ -1,0 +1,110 @@
+.page {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "title"
+        "main"
+        "footer";
+    grid-template-rows: auto auto auto 1fr auto;
+}
+
+.header2 {
+    grid-area: title;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    /*the content stays in one column on mobiles*/
+    align-items: center;
+}
+
+
+.about-photo {
+    display: flex;
+    /* keeps the image centered on mobiles */
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-photo img {
+    width: 60%;
+    max-width: 215px;
+    height: auto;
+    margin: 0;
+    border-radius: var(--space-1);
+    box-shadow: var(--space-1) var(--space-1) var(--space-1) var(--color-accent);
+}
+
+.about-information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+main p {
+    color: var(--color-text);
+    font-size: var(--space-3);
+    /*for degree of bold */
+    line-height: 1.6;
+    /*height of the words */
+    margin: 0;
+    padding: var(--space-3) 0;
+}
+
+footer p {
+    margin-right: var(--space-3);
+
+}
+
+@media (min-width: 768px) {
+    .about-photo img {
+        width: 100%;
+        max-width: 230px;
+    }
+
+    main p {
+        padding: var(--space-4) var(--space-4) 0 var(--space-4);
+        font-size: 16px;
+    }
+
+    main {
+        display: grid;
+        /* On desktop grid places the text beside the photo */
+        grid-template-columns: 70% 30%;
+        column-gap: var(--space-6);
+        align-content: start;
+        /* grid content will be at the top of the main section */
+    }
+
+    .about-photo {
+        grid-column: 2;
+        /*put the photo in the right column*/
+        grid-row: 1;
+        align-self: center;
+        /*center the photo vertically */
+    }
+
+    .about-information {
+        grid-column: 1;
+        /* put the information in the left column */
+        grid-row: 1;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .about-information h2 {
+        margin-top: var(--space-3);
+    }
+
+    .about-information p {
+        padding: var(--space-2) 0 var(--space-4) 0;
+    }
+
+    footer p {
+        margin-top: 43px;
+        margin-left: var(--space-3);
+    }
+}

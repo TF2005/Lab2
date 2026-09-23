@@ -1,37 +1,6 @@
-:root {
-     /*colors used throughout the page */
-    --color-background: #ffffff;
-    --color-text: #333333;
-    --color-accent: #DE638A;
-    --color-box: #ffdbe9;
-
-     /* main spacing used throughout the page */
-    --space-1: 5px;
-    --space-2: 10px;
-    --space-3: 15px;
-    --space-4: 20px;
-    --space-5: 25px;
-    --space-6: 35px;
-    --space-7: 45px;
-}
-
-body {
-    background-color: var(--color-box);
-    font-family: Georgia, Arial; /*if Georgia not found then Arial */
-    text-align: center;
-    margin: 0;
-    padding: var(--space-4);
-    min-height: 100vh;
-    box-sizing: border-box;
-}
-
-.page {
-    background-color: var(--color-background);
-    min-height: 90vh;
-    box-sizing: border-box;
-    border-radius: var(--space-4);
-    padding: var(--space-4);
-    display: grid; /*to organize the layout of the whole page */
+.page{
+    display: grid;
+    /*to organize the layout of the whole page */
     grid-template-areas:
         "header"
         "nav"
@@ -40,109 +9,29 @@ body {
     grid-template-rows: auto auto 1fr auto;
 }
 
-header{
-    grid-area: header; /*assigning each area of the grid to its own part */
-}
-
-h1 {
-    color: var(--color-text);
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0 0 var(--space-3) 0;
-
-}
-
-nav {
-    grid-area: nav;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.4;
-    margin-bottom: var(--space-5);
-    display: flex;/*to put the navigation links horizontally*/
-    justify-content: center;
-    gap: var(--space-3); /* create space in the nav bar between the elements */
-}
-
-nav a {
-    color: var(--color-text);
-    /*i tried putting the color in the nav without specifiying the element a it turned out that a has its 
-    own browser default color so i had to do it like this to be able to override it*/
-    text-decoration: none; /* I removed the underline under the elements in the navbar */
-    transition: color 200ms;
-
-}
-
-nav a:hover {
-    color: var(--color-accent);
-}
-
 main {
-    grid-area: main;
-    border-radius:var(--space-4);
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
+    border-radius: var(--space-4);
     background-color: var(--color-box);
-}
-
-h2 {
-    color: var(--color-accent);
-    font-size: 19px;
-    font-weight: 700;
-    line-height: 1.3;
-    margin: var(--space-6) 0 8px 0;
-    padding: 0;
-    text-align: center;
+    display: flex;
+    /*to put the different main sections one under another */
+    flex-direction: column;
+    align-items: center;
 }
 
 main p {
     color: var(--color-text);
     font-size: 15px;
-    font-weight: 400;
     line-height: 1.6;
     margin: 0;
-    padding: var(--space-3) var(--space-1) 0 var(--space-1);
-    /* I added space so the text is not too close to the edges */
-}
-
-footer{
-    grid-area: footer;
-}
-
-footer p {
-    color: var(--color-text);
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 1.4;
-    margin-top: var(--space-7);
-    margin-bottom:0;
     padding: var(--space-3) 0;
 }
 
+
 /* adjusting sizes and spacing on larger screens */
 @media (min-width: 768px) {
-    h1 {
-        font-size: 32px;
-    }
-    h2 {
-        font-size: 26px;
-    }
-    body {
-        padding: 30px 50px;
-    }
-    nav {
-        margin-bottom: var(--space-6);
-        gap: var(--space-4);
-    }
     main p {
         padding: var(--space-4) var(--space-4) 0 var(--space-4);
+        /* more space around the text on larger screens */
         font-size: 16px;
-    }
-    footer p{
-        font-size:13px;
     }
 }

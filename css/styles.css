@@ -1,4 +1,3 @@
-/* most of the comments of the Hstyles.css also apply here */
 :root {
     --color-background: #ffffff;
     --color-text: #333333;
@@ -17,14 +16,14 @@
 body {
     background-color: var(--color-box);
     font-family: Georgia, Arial;
-    /*it uses georgia if not found it uses arial*/
+    /*if Georgia not found then Arial */
     text-align: center;
     margin: 0;
     padding: var(--space-4);
     min-height: 100vh;
-    /*I used this and the following 4 commands to be able to have the footer on the bottom of the page*/
     box-sizing: border-box;
 }
+
 
 .page {
     background-color: var(--color-background);
@@ -32,22 +31,11 @@ body {
     box-sizing: border-box;
     border-radius: var(--space-4);
     padding: var(--space-4);
-    display: grid;
-    grid-template-areas:
-        "header"
-        "nav"
-        "title"
-        "main"
-        "footer";
-    grid-template-rows: auto auto auto 1fr auto;
 }
 
 header {
     grid-area: header;
-}
-
-.header2{
-    grid-area:title;
+    /*assigning each area of the grid to its own part */
 }
 
 h1 {
@@ -55,26 +43,29 @@ h1 {
     font-size: 22px;
     font-weight: 700;
     line-height: 1.2;
-    margin: 0 0 var(--space-3) 0;
-    padding: 0;
+    margin: 0 0 var(--space-3);
 }
 
 nav {
     grid-area: nav;
-    font-size: var(--space-3);
+    font-size: 15px;
     font-weight: 600;
     line-height: 1.4;
     margin-bottom: var(--space-5);
-    padding: 0;
     display: flex;
-    flex-direction: row;
+    /*to put the navigation links horizontally*/
     justify-content: center;
     gap: var(--space-3);
+    /* create space in the nav bar between the elements */
 }
+
 
 nav a {
     color: var(--color-text);
+    /*i tried putting the color in the nav without specifiying the element a it turned out that a has its 
+    own browser default color so i had to do it like this to be able to override it*/
     text-decoration: none;
+    /* I removed the underline under the elements in the navbar */
     transition: color 200ms;
 }
 
@@ -87,31 +78,6 @@ main {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column; /*the content stays in one column on mobiles*/
-    align-items: center;
-}
-
-
-.about-photo {
-    display: flex; /* keeps the image centered on mobiles */
-    flex-direction: column;
-    align-items: center;
-}
-
-.about-photo img {
-    width: 60%;
-    max-width: 215px;
-    height: auto;
-    margin: 0;
-    border-radius: var(--space-1);
-    box-shadow: var(--space-1) var(--space-1) var(--space-1) var(--color-accent);
-}
-
-.about-information {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 h2 {
@@ -119,21 +85,8 @@ h2 {
     font-size: 19px;
     font-weight: 700;
     line-height: 1.3;
-    margin: var(--space-6) 0 8px 0;
-    padding: 0;
+    margin: var(--space-6) 0 8px;
     text-align: center;
-
-}
-
-main p {
-    color: var(--color-text);
-    font-size: var(--space-3);
-    font-weight: 400;
-    /*for degree of bold */
-    line-height: 1.6;
-    /*height of the words */
-    margin: 0;
-    padding: var(--space-3) var(--space-1) 0 var(--space-1);
 }
 
 footer {
@@ -142,15 +95,13 @@ footer {
 
 footer p {
     color: var(--color-text);
-    font-size: var(--space-2);
-    font-weight: 400;
+    font-size: 10px;
     line-height: 1.4;
     margin-top: var(--space-7);
-    margin-right: var(--space-3);
     margin-bottom: 0;
     padding: var(--space-3) 0;
-
 }
+
 
 @media (min-width: 768px) {
     body {
@@ -170,46 +121,7 @@ footer p {
         gap: var(--space-4);
     }
 
-    .about-photo img {
-        width: 100%;
-        max-width: 230px;
-    }
-
-    main p {
-        padding: var(--space-4) var(--space-4) 0 var(--space-4);
-        font-size: 16px;
-    }
-
     footer p {
         font-size: 13px;
-        margin-top: 43px;
-        margin-left: var(--space-3);
-    }
-    main {
-        display: grid; /* On desktop grid places the text beside the photo */
-        grid-template-columns:70% 30%;
-        column-gap: var(--space-6);
-        align-content: start; /* grid content will be at the top of the main section */
-    }
-
-    .about-photo {
-        grid-column: 2; /*put the photo in the right column*/
-        grid-row: 1;
-        align-self: center; /*center the photo vertically */
-    }
-
-    .about-information {
-        grid-column: 1;  /* put the information in the left column */
-        grid-row: 1;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    .about-information h2 {
-        margin-top: var(--space-3);
-    }
-
-    .about-information p {
-        padding: var(--space-2) 0 var(--space-4) 0;
     }
 }
